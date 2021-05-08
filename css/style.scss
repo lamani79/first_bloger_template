@@ -1,0 +1,71 @@
+// container start
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+    .container{
+        width: 540px;
+        // background-color: grey;
+
+    
+    }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+    .container{
+        width: 720px;
+        // background-color: red;
+
+    
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+    .container{
+        width: 960px;
+        // background-color: black;    
+    }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    .container{
+        width: 1140px;
+        // background-color: blueviolet;
+
+    
+    }
+ }
+ // container End
+//  ####################################################
+//variables start:
+//  ######################
+// colors:
+
+$main-color : red;
+$second-color: green;
+//  ######################
+// fonts:
+// $main-font:
+//variables end
+
+//  ####################################################
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+
+*,h1,h2,h3,a,ul,li,button,span{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+
