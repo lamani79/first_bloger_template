@@ -78,7 +78,7 @@ ul{
 // ################################
 // .top_cover start:
 #top_cover{
-    height: 30vh;
+    height: 50vh;
     background-image: url('../images/type-header.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -114,10 +114,60 @@ ul{
 // .top_cover end
 // ################################
 // main nav start::after
+.mb-nav-draw_oppen{
+    span{
+        &:nth-child(1){
+            transform: rotate(45deg) translate(-3px, -2px);
+        }
+        &:nth-child(2){
+            opacity: 0;
+        }
+        &:nth-child(3){
+            transform: rotate(-45deg) translate(2px, 1px);
+        }
+        }
+    }
+// .mb-nav-to-right{
+//     transform: translateX(38vw);
+// }
+#mb-nav-draw{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    // background-color: white;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: $slow_trans_time ease-in;
+
+    span{
+        transition: $slow_trans_time ease-in;
+        transform-origin: 0 100%;
+        width: 80%;
+        height: 5Px;
+        background-color: $blue;
+        border-radius: 20px;
+        &:nth-child(2){
+            margin: 5px 0px;
+
+        }
+    }
+}
+
 #main_nav{
+   
+    width: 100%;
+    background-color: white;
     height: 50px;
     line-height: 50px;
+    z-index: 9999;
     box-shadow:  0px 1px 10px 2px #efefef;
+    transition: 0.1s ;
     .container{
         
     }
@@ -159,6 +209,37 @@ ul{
             }
         }
     }
+    @media (max-width: 576px) { 
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        width: 50%;
+        // right: from js
+        ul{
+            flex-direction: column;
+    height: 100vh;
+        }
+     }
 }
+#over_lay_of_nav{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: black;
+    z-index: 9999;  
+    
+    transition: .1s ease-in;
+}
+.over_lay_of_nav_on{
+    visibility: visible;
+    opacity: 0.85;
+}
+.over_lay_of_nav_off{
+    visibility: hidden;
+    opacity: 0;
+}
+
 // main nav end
 // ################################
