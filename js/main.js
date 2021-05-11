@@ -28,7 +28,7 @@ function open_mb_nav_style(is_open) {
     }
 }
 // ##################################################
-var ok_media_for_nav = window.matchMedia("(max-width: 576px)");
+var ok_media_for_nav = window.matchMedia("(max-width: 760px)");
 
 function myFunction() {
     is_open = 0;
