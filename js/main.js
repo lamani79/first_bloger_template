@@ -45,10 +45,6 @@ ok_media_for_nav.addListener(myFunction) // Attach listener function on state ch
 // ########################################################
 
 
-
-
-
-
 mb_nav_btn.onclick = click_mb_nav;
 
 function click_mb_nav() {
@@ -66,3 +62,26 @@ function click_mb_nav() {
 
 
 }
+
+
+
+// ########################################################
+// scroll to top with btn
+let btn_to_top = document.getElementById('btn_to_top');
+let top_btn_icon = document.querySelector('#btn_to_top img');
+btn_to_top.onclick = scroll_to_top;
+function scroll_to_top() {
+    window.scrollTo(0, 0);
+}
+window.addEventListener('scroll', show_top_btn_or_not);
+function show_top_btn_or_not(e) {
+    if (scrollY >= 800) {
+        btn_to_top.style.visibility = 'visible';
+        btn_to_top.style.opacity = '1';
+    } else {
+        btn_to_top.style.visibility = 'none';
+        btn_to_top.style.opacity = '0';
+    }
+}
+// luch function on window loading
+show_top_btn_or_not();

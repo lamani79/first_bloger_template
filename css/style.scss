@@ -62,6 +62,7 @@ $slow_trans_time : 0.3s;
 html {
     scroll-behavior: smooth;
     font-family: 'Nunito Sans', sans-serif;
+    scroll-behavior: smooth;
   }
   
 
@@ -88,7 +89,33 @@ img{
         color: $blue;
     }
 }
+// ################################
+#btn_to_top{
+    width: 50px;
+    height: 50px;
+    border: 0px;
+    border-radius: 50%;
+    background-color: $blue;
+    z-index: 99;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    overflow: hidden;
+    transition: $slow_trans_time ease;
+    cursor: pointer;
+    &:hover img{
+        transform: rotate(-90deg) scale(0.5);
 
+    }
+
+    img{
+        transition: $slow_trans_time ease;
+        transform: rotate(-90deg) scale(0.4);
+        width: 100%;
+        height: 100%;
+    }
+
+}
 
 // ################################
 // .top_cover start:
@@ -102,6 +129,7 @@ img{
     justify-content: center;
     align-items: center;
     position: relative;
+    
     &::after{
         content: '';
         position: absolute;
