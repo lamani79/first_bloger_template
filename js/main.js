@@ -3,21 +3,55 @@ let mb_nav_btn = document.getElementById("mb-nav-draw");
 let main_nav = document.getElementById('main_nav');
 let over_lay_of_nav = document.getElementById('over_lay_of_nav');
 let mb_nav_container = document.querySelector('.mb_nav_container');
+let layer1_of_mb_nav = document.querySelector('.layer1');
+let layer2_of_mb_nav = document.querySelector('.layer2');
+
 
 let is_open = 0;
+
+
+
 function mb_nav_bollet_style(is_open) {
     is_open == 0 ? mb_nav_btn.classList.add("mb-nav-draw_oppen") : mb_nav_btn.classList.remove('mb-nav-draw_oppen');
 }
 function open_mb_nav_style(is_open) {
-    main_nav.classList.toggle('mb_is_on');
+
 
     if (is_open == 0) {
+        layer2_of_mb_nav.classList.add('layer2_more_style');
+        layer1_of_mb_nav.classList.add('layer1_more_style');
+
+
         main_nav.style.right = '0%';
+
+        main_nav.classList.add("open_mb_nav_style");
+        layer1_of_mb_nav.classList.add("open_mb_nav_style");
+        layer2_of_mb_nav.classList.add("open_mb_nav_style");
+
+
+        main_nav.classList.remove("close_mb_nav_style");
+        layer1_of_mb_nav.classList.remove("close_mb_nav_style");
+        layer2_of_mb_nav.classList.remove("close_mb_nav_style");
+
+
         over_lay_of_nav.classList.add("over_lay_of_nav_on");
         over_lay_of_nav.classList.remove("over_lay_of_nav_off");
 
     }
     else {
+        layer2_of_mb_nav.classList.remove('layer2_more_style');
+        layer1_of_mb_nav.classList.remove('layer1_more_style');
+
+
+        main_nav.classList.remove("open_mb_nav_style");
+        layer1_of_mb_nav.classList.remove("open_mb_nav_style");
+        layer2_of_mb_nav.classList.remove("open_mb_nav_style");
+
+
+        main_nav.classList.add("close_mb_nav_style");
+        layer1_of_mb_nav.classList.add("close_mb_nav_style");
+        layer2_of_mb_nav.classList.add("close_mb_nav_style");
+
         main_nav.style.right = '-52%';
         over_lay_of_nav.classList.remove("over_lay_of_nav_on");
         over_lay_of_nav.classList.add("over_lay_of_nav_off");
@@ -55,6 +89,10 @@ ok_media_for_nav.addListener(myFunction) // Attach listener function on state ch
 
 
 mb_nav_btn.onclick = click_mb_nav;
+// to close nav when click to over lay no nav space
+over_lay_of_nav.onclick = function () {
+    click_mb_nav();
+}
 
 function click_mb_nav() {
     if (is_open == 0) {
