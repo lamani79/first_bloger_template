@@ -1,4 +1,54 @@
 
+
+// lazy images effect;
+let imgs = document.querySelectorAll('img');
+
+const observ = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(entrie => {
+
+        let the_img = entrie.target;
+        let src = the_img.getAttribute("src");
+        let src_lazy = the_img.getAttribute('lazy-data');
+
+
+        if (entrie.isIntersecting && src == "") {
+            the_img.classList.add('img_vis');
+            the_img.setAttribute("src", src_lazy);
+
+
+        } else {
+            console.log('no');
+            // the_img.classList.remove('img_vis')
+
+        }
+    });
+});
+// observ.observe(imgs[0]);
+
+imgs.forEach((img, index) => {
+    observ.observe(img);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let mb_nav_btn = document.getElementById("mb-nav-draw");
 let main_nav = document.getElementById('main_nav');
 let over_lay_of_nav = document.getElementById('over_lay_of_nav');
@@ -179,11 +229,9 @@ check.addEventListener('change', function () {
         box.setAttribute('style', 'background-color:black; color:white;')
         ball.setAttribute('style', 'transform:translatex(0%);')
 
-
-
-
-
-
-
     }
-})
+});
+
+
+
+
