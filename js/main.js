@@ -12,6 +12,8 @@ const observ = new IntersectionObserver(function (entries, observer) {
 
 
         if (entrie.isIntersecting && src == "") {
+            the_img.style.opacity = 1;
+
             the_img.classList.add('img_vis');
             the_img.setAttribute("src", src_lazy);
 
