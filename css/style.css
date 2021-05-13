@@ -279,8 +279,6 @@ body {
 }
 
 #main_nav {
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
   background-color: var(--back_color-nav-bar);
   line-height: 50px;
   z-index: 9999;
@@ -492,8 +490,6 @@ body {
   text-align: center;
   font-weight: 700;
   z-index: 99;
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
   color: white;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;

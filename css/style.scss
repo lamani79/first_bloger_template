@@ -333,7 +333,7 @@ body{
 }
 
 #main_nav{
-    transition-delay: 0.1s;
+    // transition-delay: 0.1s;
 
 
     @media (max-width: 760px) { 
@@ -532,7 +532,7 @@ body{
             text-align: center;
             font-weight: 700;
             z-index: 99;
-            transition-delay: 0.1s;
+            // transition-delay: 0.1s;
             color: white;
             transition: $slow_trans_time ease;
 
