@@ -1,5 +1,23 @@
+// Selecting all the required classes from HTML to change 
+var body = document.body
+var check = document.querySelector('#check')
+var box = document.querySelector('.box')
+var ball = document.querySelector('.ball')
+// let dark_mode_status = localStorage.getItem('dark_mode');
+let ls_dark_is_on;
+// let check = document.getElementById('check');
+// if (dark_mode_status == null) {
+//     localStorage.setItem('dark_mode', 0);
+
+// } else {
 
 
+//     if (dark_mode_status == 1) {
+//         check.checked == true;
+//         dark_mode_style()
+//     }
+
+// }
 // lazy images effect;
 let imgs = document.querySelectorAll('img');
 
@@ -185,10 +203,7 @@ function show_top_btn_or_not(e) {
 // luch function on window loading
 show_top_btn_or_not();
 
-// let btn = document.getElementById("btn");
-// document.querySelector('#dark_mode_btn').addEventListener('click', function () {
-//     document.body.classList.toggle('dark');
-// });
+
 
 function turn_dark() {
     document.body.classList.toggle('dark');
@@ -197,11 +212,7 @@ function turn_dark() {
 
 
 
-// Selecting all the required classes from HTML to change 
-var body = document.body
-var check = document.querySelector('#check')
-var box = document.querySelector('.box')
-var ball = document.querySelector('.ball')
+
 
 
 
@@ -209,30 +220,29 @@ var ball = document.querySelector('.ball')
 
 // Adding an eventListener function to change color everytime var check is changed.(checked & unchecked)
 
-check.addEventListener('change', function () {
+check.addEventListener('change', dark_mode_style)
+
+function dark_mode_style() {
     turn_dark()
     //   conditions to apply when checkbox is checked
 
     if (this.checked == true) {
+        // localStorage.setItem('dark_mode', 1);
         box.setAttribute('style', 'background-color:white;')
         ball.setAttribute('style', 'transform:translatex(100%);')
         // body.setAttribute('style','background-color:black; color:white;') 
-
-
-
-
-
 
     }
 
     //   conditions to apply when checkbox is unchecked
 
     if (this.checked == false) {
+        // localStorage.setItem('dark_mode', 0);
         box.setAttribute('style', 'background-color:black; color:white;')
         ball.setAttribute('style', 'transform:translatex(0%);')
 
     }
-});
+};
 
 
 
